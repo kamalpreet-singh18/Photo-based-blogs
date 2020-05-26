@@ -18,6 +18,6 @@ ul{
     background-color: rgb(99, 235, 217);
 }
 
-.newpost:hover{
+.cursorlink:hover{
     background-color: white;
 }

@@ -1,15 +1,18 @@
 <mat-toolbar style="background-color: rgb(6, 156, 131);">
-    <span><a href="">Picstagram</a></span>
+    <span><a routerLink="/">Picstagram</a></span>
     <span class="spacer"></span>
     <ul>
-        <li> 
-            <a mat-button routerLink="/create" routerLinkActive="current" class="newpost">New Post</a>
+        <li *ngIf="userIsAuthenticated"> 
+            <a mat-button routerLink="/create" routerLinkActive="current" class="cursorlink">New Post</a>
         </li>
-        <li> 
-            <a mat-button routerLink="/login" routerLinkActive="current" class="newpost">Login</a>
+        <li *ngIf="!userIsAuthenticated"> 
+            <a mat-button routerLink="/login" routerLinkActive="current" class="cursorlink">Login</a>
         </li>
-        <li> 
-            <a mat-button routerLink="/signup" routerLinkActive="current" class="newpost">Sign Up</a>
+        <li *ngIf="!userIsAuthenticated"> 
+            <a mat-button routerLink="/signup" routerLinkActive="current" class="cursorlink">Sign Up</a>
+        </li>
+        <li *ngIf="userIsAuthenticated"> 
+            <button mat-button class="cursorlink" (click)="onLogout()">Log Out</button>
         </li>
     </ul>
 </mat-toolbar>
