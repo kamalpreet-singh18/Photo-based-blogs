@@ -35,7 +35,8 @@ router.post("/api/post",checkAuth, multer({storage: storage}).single("image"),(r
     const post = new Post({
         title: req.body.title,
         content: req.body.content,
-        imagePath: url + "/images/" + req.file.filename
+        imagePath: url + "/images/" + req.file.filename,
+        creator: req.userData.userId
     })
     post.save().then(result=>{
         res.status(201).json({
@@ -44,7 +45,8 @@ router.post("/api/post",checkAuth, multer({storage: storage}).single("image"),(r
                 id: result._id,
                 title: result.title,
                 content: result.content,
-                imagePath: result.imagePath
+                imagePath: result.imagePath,
+                creator: req.userData.userId
             }
         });
     });
@@ -100,30 +102,36 @@ router.put("/api/posts/:postId",checkAuth, multer({storage: storage}).single("im
         _id: req.body.id,
         title: req.body.title,
         content: req.body.content,
-        imagePath: imagePath
+        imagePath: imagePath,
+        creator: req.userData.userId
     });
     
     
-    Post.updateOne({_id:req.params.postId},newPost).then(
+    Post.updateOne({_id:req.params.postId, creator: req.userData.userId},newPost).then(
         (result)=>{
-            res.status(200).json({
-                message: 'Post updated successfully!'
-            })
+            if(result.nModified>0){
+                res.status(200).json({message: 'Post updated successfully!'});
+            }
+            else{
+                res.status(401).json({message: 'Not Authorized!'});
+            }
+
         }
     )
 })
 
 router.delete("/api/post/:id",checkAuth, (req, res, next)=>{
-    Post.deleteOne({_id: req.params.id})
+    Post.deleteOne({_id: req.params.id,creator: req.userData.userId})
         .then((result)=>{
-            console.log()
-            res.status(200).json({
-                message:'Post deleted'
-            })
+
+            if(result.n>0){
+                res.status(200).json({message: 'Post deleted successfully!'});
+            }
+            else{
+                res.status(401).json({message: 'Not Authorized!'});
+            }
         })
-    res.status(200).json({
-        message: 'Post deleted successfully!'
-    })
+   
 });
 
 
