@@ -21,3 +21,28 @@ mat-paginator{
     box-shadow: 1px 1px 5px rgb(0,0,0,0.5);
 
 }
+
+.title{
+    margin-top: 3px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.post{
+    box-shadow: 10px 10px 5px grey;
+    margin-bottom: 50px;
+}
+
+.buttons{
+    margin-left: 85%;
+}
+.post-container{
+    padding: 20px;
+    border-left: 1px gray solid;
+    border-right: 1px gray solid;
+}
+
+.caption{
+    font-size: 20px;
+    margin-top: 10px;
+}
