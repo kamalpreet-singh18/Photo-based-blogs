@@ -46,7 +46,7 @@ export class PostsService{
         //http request
         this.http.post<{message: string,post: Post}>('http://localhost:3000/api/post',postData)
                 .subscribe(responseData=>{
-                    this.router.navigate(["/"])
+                    this.router.navigate(["/feed"])
                 });
 
         ;

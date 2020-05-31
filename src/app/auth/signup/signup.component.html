@@ -1,4 +1,5 @@
-<mat-card>
+<div class="display-3 text-center">Sign Up</div>
+<mat-card class="offset-3 col-md-6">
     <mat-spinner *ngIf="isLoading"></mat-spinner>
 <form *ngIf="!isLoading" (submit)="onSignup(signupForm)" #signupForm = "ngForm" >
     <mat-form-field>
@@ -10,6 +11,9 @@
         <mat-error *ngIf="passwordInput.invalid">Please enter a password</mat-error>
     </mat-form-field><br>
     <button mat-raised-button style="background-color: rgb(33, 241, 179);" type="submit" *ngIf="!isLoading">Sign Up</button>
+    <div style="margin-top: 10px;">Already have an account? Click here
+        <a routerLink="/login">Login</a>
+    </div>
 
 </form>
 </mat-card> 

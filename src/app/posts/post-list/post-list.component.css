@@ -24,25 +24,27 @@ mat-paginator{
 
 .title{
     margin-top: 3px;
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 22px;
+    padding: 10px; 
+    color: white;
+ 
 }
 
 .post{
-    box-shadow: 10px 10px 5px grey;
-    margin-bottom: 50px;
+    margin-top: 15px;
 }
 
 .buttons{
     margin-left: 85%;
+    margin-top: -25px;
 }
 .post-container{
     padding: 20px;
-    border-left: 1px gray solid;
-    border-right: 1px gray solid;
+    border-left: 1px rgb(218, 213, 213) solid;
+    border-right: 1px rgb(202, 198, 198) solid;
 }
 
 .caption{
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 10px;
 }

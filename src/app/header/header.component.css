@@ -15,9 +15,11 @@ ul{
 }
 
 .current{
-    background-color: rgb(126, 193, 196);
+    background-color: black;
+    color: white;
 }
 
 .cursorlink:hover{
     background-color: white;
+    color:black
 }
