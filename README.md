@@ -8,5 +8,15 @@ To download and install all the required dependencies, git clone or download and
 
 ## Running the app
 
-Open the project folder in terminal. Then Run the following commands `ng serve` and `nodemon server.js`.
+In /backend/app.js file, replace DB_URL with your database connection.
+`mongoose.connect("DB_URL",{useNewUrlParser: true,useUnifiedTopology: true})
+        .then(()=>{
+            console.log("Connected to mongodb!");
+        })
+        .catch(err=>{
+            console.log("Connection failed")
+        })`
+
+Open the project folder in terminal. Then Run the following commands `ng serve` for front-end and in another terminal run command `nodemon server.js` for backend.
+
 
