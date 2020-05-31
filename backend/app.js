@@ -8,7 +8,7 @@ const postRoutes = require("./routes/posts");
 const userRoutes = require("./routes/user");
 
 
-mongoose.connect("mongodb+srv://kamal:aujla1234@cluster0-5i9ep.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,useUnifiedTopology: true})
+mongoose.connect("DB_URL",{useNewUrlParser: true,useUnifiedTopology: true})
         .then(()=>{
             console.log("Connected to mongodb!");
         })
