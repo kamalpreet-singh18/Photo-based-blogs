@@ -8,7 +8,7 @@ To download and install all the required dependencies, git clone or download and
 
 ## Running the app
 
-In /backend/app.js file, replace DB_URL with your database connection.
+In /backend/app.js file, replace DB_URL with your database connection.         
 `mongoose.connect("DB_URL",{useNewUrlParser: true,useUnifiedTopology: true})
         .then(()=>{
             console.log("Connected to mongodb!");
