@@ -16,8 +16,9 @@
 </mat-accordion> -->
 
 <div class="offset-2 col-md-8 post-container">
+    <div class="alert alert-success display-4 rounded text-center">News feed</div>
     <div class="post text-center" *ngFor="let post of posts">
-        <div class="row title">
+        <div class="row title bg-dark rounded" >
             {{post.title}}
             <span class="buttons" *ngIf="userIsAuth && userId=== post.creator">
                 <button class="ui icon button "[routerLink]="['/edit',post.id]">

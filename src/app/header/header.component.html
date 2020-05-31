@@ -1,7 +1,10 @@
-<mat-toolbar style="background-color: rgb(33, 241, 179);">
+<mat-toolbar style="background-color: rgb(29, 212, 157);">
     <span><a routerLink="/">Picstagram</a></span>
     <span class="spacer"></span>
     <ul>
+        <li *ngIf="userIsAuthenticated"> 
+            <a mat-button routerLink="/feed" routerLinkActive="current" class="cursorlink">News feed</a>
+        </li>
         <li *ngIf="userIsAuthenticated"> 
             <a mat-button routerLink="/create" routerLinkActive="current" class="cursorlink">New Post</a>
         </li>
